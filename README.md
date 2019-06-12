@@ -1,11 +1,11 @@
 # Учим Rust
 
- Данный репозиторий - сборник материалов для изучения языка программирования Rust и решений задач.
+ Данный репозиторий - сборник материалов для изучения языка программирования Rust, готовых проектов и решений задач.
 
 # Книги
 
 https://rustbook.kinoher.ml - перевод второго издания популярного учебника https://github.com/rust-lang/book
-
+https://rurust.github.io/rust-by-example-ru/index.html - более подробная книга
 # Видео
 
 https://youtu.be/Oy_VYovfWyo - серия видео-уроков от https://github.com/matklad
