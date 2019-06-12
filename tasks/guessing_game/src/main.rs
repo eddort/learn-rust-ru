@@ -1,0 +1,48 @@
+
+use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
+
+#[cfg(test)]
+mod tests {
+  #[test]
+  fn it_works() {
+    assert_eq!(1, 1);
+  }
+}
+
+fn get_secret_number() -> u32 {
+  return rand::thread_rng().gen_range(1, 101);
+}
+
+fn main() {
+  println!("Guess the number!");
+
+  let secret_number: u32 = get_secret_number();
+
+  loop {
+    println!("Please input your guess.");
+
+    let mut guess = String::new();
+
+    io::stdin()
+      .read_line(&mut guess)
+      .expect("Failed to read line");
+
+    let guess: u32 = match guess.trim().parse() {
+      Ok(num) => num,
+      Err(_) => continue,
+    };
+
+    println!("You guessed: {}", guess);
+
+    match guess.cmp(&secret_number) {
+      Ordering::Less => println!("Too small!"),
+      Ordering::Greater => println!("Too big!"),
+      Ordering::Equal => {
+        println!("You win!");
+        break;
+      }
+    }
+  }
+}
